@@ -12,8 +12,8 @@ In your javascript-code
     // load jQuery async:
     c1Use('jQuery', function() {
 
-        // use syncron: 
-        c1Use.addGetter(jQuery, 'fn');
+        // make jQuery.fn usable with c1Use
+        c1Use.able(jQuery, 'fn');
 
         // use syncron: 
         c1Use.addGetter(jQuery.fn,'velocity');
