@@ -18,13 +18,8 @@ File-structur:
 
 asyncron use:
 
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
 
 ```javascript
-
 // optional ( fallback is the dir in the scripts-tags src )
 window.c1UseSrc = '/url/to/c1Use.js';
 
@@ -34,24 +29,20 @@ c1Use('jQuery', function($) {
     $('#test').addClass('xy')
 
 });
-
 ```
 
 syncron use:
 
 ```javascript
-
     // make "jQuery" a magicly usable property 
     c1Use.addGetter(window, 'jQuery');
 
     // now, "jQuery" is magicly usable
     // the jQeury module is not loaded at this momenbt
     jQuery('#text') // at this moment jQuery will be loaded
-    
 ```
 
 make properties (submodules) usable with c1Use:
-
 ```javascript
 
     c1Use('jQuery', function($) { // "jQuery" is now usable with c1Use
@@ -64,10 +55,7 @@ make properties (submodules) usable with c1Use:
         $('#text').velocity( {color:red} );
          
     })
-
 ```
-
-
 
 licence:
 =====
