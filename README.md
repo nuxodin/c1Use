@@ -3,26 +3,29 @@ in your html head:
 =====
 
     <script src="c1Use.js">
-    <script src="jQuery.js">
 
 In your javascript-code
 
-    // optional 
+    // optional ( fallback is the dir in the scripts-tags src )
     window.c1UseSrc = '/url/to/c1Use.js';
 
-    // make the object "jQuery.fn" c1.Use usable width c1Use
-    c1Use.able('jQuery.fn');
+    // load jQuery async:
+    c1Use('jQuery', function() {
 
-    // use sync: 
-    c1Use.addGetter(jQuery.fn,'velocity');
+        // use syncron: 
+        c1Use.addGetter(jQuery, 'fn');
 
-    // now, the plugin "velocity" is magicly usable
-    $('#test').velocity();
-
-    // or async:
-    // if it has a callback-function, it is async
-    $('#text').c1Use('velocity', function() {
-    	this.velocity();
+        // use syncron: 
+        c1Use.addGetter(jQuery.fn,'velocity');
+    
+        // now, the plugin "velocity" is magicly usable
+        $('#test').velocity();
+    
+        // or - if it has a callback-function, it is async
+        $('#text').c1Use('velocity', function() {
+        	this.velocity();
+        });
+    
     });
 
 
