@@ -10,7 +10,7 @@ In your javascript-code
     // optional 
     window.c1UseSrc = '/url/to/c1Use.js';
 
-    // make the object "jQuery.fn" c1.Use usable (c1Use.able);
+    // make the object "jQuery.fn" c1.Use usable width c1Use
     c1Use.able('jQuery.fn');
 
     // use sync: 
