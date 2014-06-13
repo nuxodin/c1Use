@@ -51,7 +51,7 @@ c1Use('jQuery', function($) { // "jQuery" is now usable with c1Use
     
     // later:
     $('#text').velocity( {color:red} );
-     
+
 })
 ```
 
