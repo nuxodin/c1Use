@@ -7,41 +7,41 @@ hierarchical module loader
 in your html:
 =====
 
-<script src="c1Use.js">
-<script src="jQuery.js">
+    <script src="c1Use.js">
+    <script src="jQuery.js">
 
-<script>
+    <script>
 
-c1Use.able('jQuery.fn');
+    c1Use.able('jQuery.fn');
 
-//----------------
-// use sync:
+    //----------------
+    // use sync:
 
-c1Use.addGetter(jQuery.fn,'velocity');
+    c1Use.addGetter(jQuery.fn,'velocity');
 
-$('#test').velocity();
+    $('#test').velocity();
 
-//----------------
-// or async: ( if it has a callback-function, it is async )
+    //----------------
+    // or async: ( if it has a callback-function, it is async )
+    
+    $('#text').c1Use('velocity',function(){
+    	this.velocity();
+    })
 
-$('#text').c1Use('myplugin',function(){
-	this.myplugin();
-})
-
-</script>
+    </script>
 
 
 
-your php file-structur:
+your file-structur:
 =====
 
---|
-  | c1Use.js
-  |
-  | jQuery.js
-  |
-  | jQuery | 
-           | fn | 
-                |  velocity.js
+    --|
+      | c1Use.js
+      |
+      | jQuery.js
+      |
+      | jQuery | 
+               | fn | 
+                    |  velocity.js
 
 
