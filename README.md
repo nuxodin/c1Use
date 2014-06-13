@@ -1,10 +1,10 @@
 
 Load the script:
-=====
+====
     <script src="c1Use.js">
 
 File-structur:
-=====
+====
 
     --|
       | c1Use.js
@@ -16,7 +16,8 @@ File-structur:
                     |  velocity.js
 
 
-asyncron use:
+Asyncron use:
+====
 
 ```javascript
 // optional ( fallback is the dir in the scripts-tags src )
@@ -30,7 +31,8 @@ c1Use('jQuery', function($) {
 });
 ```
 
-syncron use:
+Syncron use:
+====
 
 ```javascript
 c1Use.addGetter(window, 'jQuery');
@@ -40,7 +42,8 @@ c1Use.addGetter(window, 'jQuery');
 jQuery('#text') // at this moment jQuery will be loaded
 ```
 
-make properties (submodules) usable with c1Use:
+Make properties (submodules) usable with c1Use:
+====
 
 ```javascript
 c1Use('jQuery', function($) { // "jQuery" is now usable with c1Use
@@ -54,8 +57,8 @@ c1Use('jQuery', function($) { // "jQuery" is now usable with c1Use
 })
 ```
 
-licence:
-=====
+Licence:
+====
 MIT
 
 
