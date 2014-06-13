@@ -12,7 +12,8 @@ In your javascript-code
     // load jQuery async:
     c1Use('jQuery', function() {
 
-        // make jQuery.fn usable with c1Use
+        // make "jQuery.fn" usable with c1Use
+        // (the Object "jQuery" is automaticly usable width c1Use when loaded with c1Use)
         c1Use.able(jQuery, 'fn');
 
         // use syncron: 
