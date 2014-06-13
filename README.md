@@ -48,8 +48,7 @@ c1Use('jQuery', function($) { // "jQuery" is now usable with c1Use
     c1Use.able(jQuery, 'fn'); // make "jQuery.fn" usable
     
     c1Use.addGetter( jQuery.fn, 'velocity' );
-    
-    // later:
+    // later: in your code
     $('#text').velocity( {color:red} );
 
 })
