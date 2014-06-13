@@ -35,11 +35,11 @@ Syncron use:
 ====
 
 ```javascript
-c1Use.addGetter(window, 'jQuery');
+c1Use.addGetter(window, 'JSON'); // JSON-polyfill for old browsers
 
-// now, "jQuery" is magicly usable
-// the jQeury module is not loaded at this momenbt
-jQuery('#text') // at this moment jQuery will be loaded
+// now, "JSON" is magicly usable
+// the *JSON" poilyfill  is not loaded at this momenbt!!
+JSON.parse( '{a:1,b:2}' ); 
 ```
 
 Make properties (submodules) usable with c1Use:
