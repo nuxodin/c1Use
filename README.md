@@ -1,36 +1,9 @@
 
-in your html head:
+Load the script:
 =====
-
     <script src="c1Use.js">
 
-In your javascript-code
-
-    // optional ( fallback is the dir in the scripts-tags src )
-    window.c1UseSrc = '/url/to/c1Use.js';
-
-    // load jQuery async:
-    c1Use('jQuery', function() {
-
-        // make "jQuery.fn" usable with c1Use
-        // (the Object "jQuery" is automaticly usable width c1Use when loaded with c1Use)
-        c1Use.able(jQuery, 'fn');
-
-        // use syncron: 
-        c1Use.addGetter(jQuery.fn,'velocity');
-    
-        // now, the plugin "velocity" is magicly usable
-        $('#test').velocity();
-    
-        // or - if it has a callback-function, it is async
-        $('#text').c1Use('velocity', function() {
-        	this.velocity();
-        });
-    
-    });
-
-
-your file-structur:
+File-structur:
 =====
 
     --|
@@ -41,6 +14,45 @@ your file-structur:
       | jQuery | 
                | fn | 
                     |  velocity.js
+
+
+asyncron use:
+
+    // optional ( fallback is the dir in the scripts-tags src )
+    window.c1UseSrc = '/url/to/c1Use.js';
+
+    // load jQuery async:
+    c1Use('jQuery', function($) {
+
+        $('#test').addClass('xy')
+
+    });
+
+
+
+syncron use:
+
+    // make "jQuery" a magicly usable property 
+    c1Use.addGetter(window, 'jQuery');
+
+    // now, "jQuery" is magicly usable
+    // the jQeury module is not loaded at this momenbt
+    jQuery('#text') // at this moment jQuery will be loaded
+    
+
+make properties (submodules) usable with c1Use:
+
+    c1Use('jQuery', function($) { // "jQuery" is now usable with c1Use
+
+        c1Use.able(jQuery, 'fn'); // make "jQuery.fn" usable
+        
+        c1Use.addGetter( jQuery.fn, 'velocity' );
+        
+        // later:
+        $('#text').velocity( {color:red} );
+         
+    })
+
 
 
 
