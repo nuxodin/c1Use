@@ -17,6 +17,7 @@ File-structur:
 
 
 asyncron use:
+```javascript
 
     // optional ( fallback is the dir in the scripts-tags src )
     window.c1UseSrc = '/url/to/c1Use.js';
