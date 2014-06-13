@@ -46,7 +46,7 @@ Make properties (submodules) usable with c1Use:
 ====
 
 ```javascript
-c1Use('jQuery', function($) { // "jQuery" is now usable with c1Use
+c1Use('jQuery', function($) { // "jQuery" is automaticly usable width c1Use because loaded with c1Use.
 
     c1Use.able(jQuery, 'fn'); // make "jQuery.fn" usable
     
@@ -56,6 +56,18 @@ c1Use('jQuery', function($) { // "jQuery" is now usable with c1Use
 
 })
 ```
+
+load multiple resources:
+====
+
+```javascript
+c1Use(['jQuery', 'mytool'], function($, mytool) { // "jQuery" is automaticly usable width c1Use because loaded with c1Use.
+
+        // use $ and mytool
+
+})
+```
+
 
 Licence:
 ====
