@@ -1,16 +1,11 @@
-c1Use
-=====
 
-hierarchical module loader
-
-
-in your html:
+in your html head:
 =====
 
     <script src="c1Use.js">
     <script src="jQuery.js">
 
-    <script>
+In your javascript-code
 
     c1Use.able('jQuery.fn');
 
@@ -24,12 +19,9 @@ in your html:
     //----------------
     // or async: ( if it has a callback-function, it is async )
     
-    $('#text').c1Use('velocity',function(){
+    $('#text').c1Use('velocity', function() {
     	this.velocity();
-    })
-
-    </script>
-
+    });
 
 
 your file-structur:
@@ -43,5 +35,11 @@ your file-structur:
       | jQuery | 
                | fn | 
                     |  velocity.js
+
+
+
+licence:
+=====
+MIT
 
 
