@@ -38,7 +38,7 @@ Syncron use:
 c1Use.addGetter(window, 'JSON'); // JSON-polyfill for old browsers
 
 // now, "JSON" is magicly usable
-// the *JSON" poilyfill  is not loaded at this momenbt!!
+// the *JSON" poilyfill  is not loaded at this moment!!!
 JSON.parse( '{a:1,b:2}' ); 
 ```
 
