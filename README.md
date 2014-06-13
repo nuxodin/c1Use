@@ -7,17 +7,22 @@ in your html head:
 
 In your javascript-code
 
+    // optional 
+    window.c1UseSrc = '/url/to/c1Use.js';
+
+    // make the object "jQuery.fn" c1.Use usable (c1Use.able);
     c1Use.able('jQuery.fn');
 
-    //----------------
-    // use sync:
+    // use sync: 
 
     c1Use.addGetter(jQuery.fn,'velocity');
 
+    // now, the plugin "velocity" is magicly usable
+
     $('#test').velocity();
 
-    //----------------
-    // or async: ( if it has a callback-function, it is async )
+    // or async:
+    // if it has a callback-function, it is async
     
     $('#text').c1Use('velocity', function() {
     	this.velocity();
