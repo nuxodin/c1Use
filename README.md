@@ -61,10 +61,8 @@ load multiple resources:
 ====
 
 ```javascript
-c1Use(['jQuery', 'mytool'], function($, mytool) { // "jQuery" is automaticly usable width c1Use because loaded with c1Use.
-
-        // use $ and mytool
-
+c1Use(['jQuery', 'mytool'], function($, mytool) {
+    // use $ and mytool
 })
 ```
 
