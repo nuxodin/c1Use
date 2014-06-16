@@ -1,10 +1,10 @@
 
 Load the script:
-====
+===
     <script src="c1Use.js">
 
 Example File-structur:
-====
+===
 
     --|
       | c1Use.js
@@ -17,7 +17,7 @@ Example File-structur:
 
 
 Konfiguration:
-====
+===
 
 ```javascript
 // optional ( fallback is the dir in the scripts-tags src )
@@ -25,7 +25,7 @@ window.c1UseSrc = '/url/to/libs';
 ```
 
 Asyncron use:
-====
+===
 
 ```javascript
 // load jQuery async:
@@ -37,7 +37,7 @@ c1Use('jQuery', function($) {
 ```
 
 Syncron use:
-====
+===
 
 ```javascript
 // if there is no callback-function, its syncron
@@ -45,7 +45,7 @@ c1Use('JSON').parse( '{a:1,b:2}' );
 ```
 
 The magic addGetter function:
-====
+===
 
 ```javascript
 c1Use.addGetter(window, 'JSON'); // JSON-polyfill for old browsers
@@ -57,7 +57,7 @@ JSON.parse( '{a:1,b:2}' );
 
 
 Make properties (submodules) usable with c1Use:
-====
+===
 
 ```javascript
 c1Use('jQuery', function($) { // "jQuery" is automaticly usable width c1Use because loaded with c1Use.
@@ -72,7 +72,7 @@ c1Use('jQuery', function($) { // "jQuery" is automaticly usable width c1Use beca
 ```
 
 load multiple resources:
-====
+===
 
 ```javascript
 c1Use(['jQuery', 'mytool'], function($, mytool) {
@@ -82,7 +82,7 @@ c1Use(['jQuery', 'mytool'], function($, mytool) {
 
 
 Licence:
-====
+===
 MIT
 
 
