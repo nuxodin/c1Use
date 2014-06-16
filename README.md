@@ -35,12 +35,21 @@ Syncron use:
 ====
 
 ```javascript
+// if there is no callback-function, its syncron
+c1Use('JSON').parse( '{a:1,b:2}' );
+```
+
+The magic addGetter function:
+====
+
+```javascript
 c1Use.addGetter(window, 'JSON'); // JSON-polyfill for old browsers
 
 // now, "JSON" is magicly usable
 // the *JSON" poilyfill  is not loaded at this moment!!!
 JSON.parse( '{a:1,b:2}' ); 
 ```
+
 
 Make properties (submodules) usable with c1Use:
 ====
