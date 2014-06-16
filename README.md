@@ -51,7 +51,7 @@ c1Use('jQuery', function($) { // "jQuery" is automaticly usable width c1Use beca
 })
 ```
 
-### Load multiple resources:
+### Use multiple resources:
 ```javascript
 c1Use(['jQuery', 'mytool'], function($, mytool) {
     // use $ and mytool
