@@ -1,9 +1,9 @@
 ### Start:
 
-##### Load the script:
+###### Load the script:
     <script src="c1Use.js">
 
-##### Example File-structur:
+###### Example File-structur:
     --|
       | c1Use.js
       |
@@ -51,7 +51,7 @@ c1Use('jQuery', function($) { // "jQuery" is automaticly usable width c1Use beca
 })
 ```
 
-### load multiple resources:
+### Load multiple resources:
 ```javascript
 c1Use(['jQuery', 'mytool'], function($, mytool) {
     // use $ and mytool
