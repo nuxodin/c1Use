@@ -3,7 +3,7 @@ Load the script:
 ====
     <script src="c1Use.js">
 
-File-structur:
+Example File-structur:
 ====
 
     --|
@@ -16,13 +16,18 @@ File-structur:
                     |  velocity.js
 
 
-Asyncron use:
+Konfiguration:
 ====
 
 ```javascript
 // optional ( fallback is the dir in the scripts-tags src )
-window.c1UseSrc = '/url/to/c1Use.js';
+window.c1UseSrc = '/url/to/libs';
+```
 
+Asyncron use:
+====
+
+```javascript
 // load jQuery async:
 c1Use('jQuery', function($) {
 
