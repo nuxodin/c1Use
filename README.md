@@ -12,13 +12,6 @@
                | fn | 
                     |  velocity.js
 
-
-### Konfiguration:
-```javascript
-// optional ( fallback is the dir in the scripts-tags src )
-window.c1UseSrc = '/url/to/libs';
-```
-
 ### Asyncron use:
 ```javascript
 // load jQuery async:
@@ -64,6 +57,11 @@ c1Use(['jQuery', 'mytool'], function($, mytool) {
 })
 ```
 
+### Configuration:
+```javascript
+// optional ( fallback is the dir in the scripts-tags src )
+window.c1UseSrc = '/url/to/libs';
+```
 
 ### Licence:
 MIT
