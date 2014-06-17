@@ -16,7 +16,7 @@
 ### Asyncron use:
 ```javascript
 // load jQuery async:
-c1Use('jQuery', function($) {
+window.c1Use('jQuery', function($) {
 
     $('#test').addClass('xy')
 
@@ -26,7 +26,7 @@ c1Use('jQuery', function($) {
 ### Syncron use:
 ```javascript
 // if there is no callback-function, its syncron
-c1Use('JSON').parse( '{a:1,b:2}' );
+window.c1Use('JSON').parse( '{a:1,b:2}' );
 ```
 
 ### The magic addGetter function:
@@ -40,7 +40,7 @@ JSON.parse( '{a:1,b:2}' );
 
 ### Make properties (submodules) usable with c1Use:
 ```javascript
-c1Use('jQuery', function($) { // "jQuery" is automaticly usable width c1Use because loaded with c1Use.
+window.c1Use('jQuery', function($) { // "jQuery" is automaticly usable width c1Use because loaded with c1Use.
 
     c1Use.able(jQuery, 'fn'); // make "jQuery.fn" usable
     
@@ -53,7 +53,7 @@ c1Use('jQuery', function($) { // "jQuery" is automaticly usable width c1Use beca
 
 ### Use multiple resources:
 ```javascript
-c1Use(['jQuery', 'mytool'], function($, mytool) {
+window.c1Use(['jQuery', 'mytool'], function($, mytool) {
     // use $ and mytool
 })
 ```
