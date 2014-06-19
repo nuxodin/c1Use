@@ -38,14 +38,14 @@
      * extend c1Use so it can have an array as first arguments
      * */
     c1Use = function (use) {
-    	var fn = function (props, cb) {
-    		var scope = this || self;
+        var fn = function (props, cb) {
+            var scope = this || self;
     		
-    		if ( !scope.c1UseSrc ) { throw new Error("c1Use: the Object needs a c1UseSrc property!"); };
+            if ( !scope.c1UseSrc ) { throw new Error("c1Use: the Object needs a c1UseSrc property!"); };
     		
-        	if ( typeof props === 'string' ) {
+            if ( typeof props === 'string' ) {
 
-        		/* parts ("jQuery.fn.velocity") */
+                /* parts ("jQuery.fn.velocity") */
         		var parts = props.split(/\./);
         		var prop = parts.pop();
         		for ( var i = 0, part; part = parts[i++]; ) {
@@ -108,7 +108,7 @@
     };
     
     /* browser only! */
-	var d = document;
+    var d = document;
     function loadScript(path,cb,eb) {
         var elem = d.createElement('script');
         elem.setAttribute('src',path);
@@ -128,7 +128,7 @@
             cb();
             //debug && setTimeout(function(){elem.remove();}); // performance ?
     	} else {
-       	 	eb();
+            eb();
     	}
     }
     if (!global.c1UseSrc) {
