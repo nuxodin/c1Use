@@ -86,7 +86,7 @@
     };
     c1Use.addGetter = function ( obj, prop ) {
 
-    	if (obj.hasOwnProperty(prop)) { return; }
+        if (obj.hasOwnProperty(prop)) { return; }
 
         if (!global.Document) { // ie8: bad check
             c1Use.call(obj,prop); // load everything!
@@ -95,16 +95,16 @@
 
         /* other libaries should check properties like so: if( prop in obj ){ ... }; so the getter will not fire */
         Object.defineProperty( obj, prop, {
-    		configurable:true,
-    		get: function() {
-        		delete obj[prop];
-        		return c1Use.call(this,prop);
+            configurable:true,
+            get: function() {
+                delete obj[prop];
+                return c1Use.call(this,prop);
             },
-    		set: function(v) {
-        		delete obj[prop];
-        		obj[prop] = v;
-    		}
-    	});
+            set: function(v) {
+                delete obj[prop];
+                obj[prop] = v;
+            }
+        });
     };
     
     /* browser only! */
