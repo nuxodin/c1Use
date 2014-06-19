@@ -1,24 +1,24 @@
 /* c1Use */
 !function(global,undefined) {
+    
+    var CALLBACKS = 'pseudosymbol_&/%f983';
+    
+    global.c1Use = function ( prop , cb ) {
 
-	var CALLBACKS = 'pseudosymbol_&/%f983';
-
-	global.c1Use = function ( prop , cb ) {
-
-		var scope = this || self;
+        var scope = this || self;
 
         if ( prop in scope ) { // loadet?
-        	cb && cb(scope[prop]);
-        	return scope[prop];
+            cb && cb(scope[prop]);
+            return scope[prop];
         }
 
-    	var callbacks = scope[CALLBACKS] || (scope[CALLBACKS]={});
+        var callbacks = scope[CALLBACKS] || (scope[CALLBACKS]={});
 
-    	if ( callbacks[prop] && cb ) { // is it loading? (and async)
+        if ( callbacks[prop] && cb ) { // is it loading? (and async)
 
-    	    callbacks[prop].push(cb);
+            callbacks[prop].push(cb);
 
-    	} else { // load!
+        } else { // load!
 
     		callbacks[prop] = [cb];
 
