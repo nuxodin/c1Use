@@ -1,7 +1,7 @@
 /* c1Use */
 !function(global,undefined) {
     
-    var CALLBACKS = 'pseudosymbol_&/%f983';
+    var CALLBACKS = 'pseudoSymbol_&/%83';
     
     global.c1Use = function ( prop , cb ) {
 
