@@ -20,18 +20,18 @@
 
         } else { // load!
 
-    		callbacks[prop] = [cb];
+            callbacks[prop] = [cb];
 
             (cb ? loadScript : loadScriptSync)( scope.c1UseSrc + '/' +prop + '.js?c' , function() {
-            	var fn,
-            		object = c1Use.able(scope,prop);
-            	while ( fn = callbacks[prop].shift() ) {
-                	fn( object );
+                var fn,
+                    object = c1Use.able(scope,prop);
+                while ( fn = callbacks[prop].shift() ) {
+                    fn( object );
                 }
             }, function() { scope[prop] = false; });
 
-    	}
-    	return cb ? null : scope[prop];
+        }
+        return cb ? null : scope[prop];
     };
 
     /* multiple and path
