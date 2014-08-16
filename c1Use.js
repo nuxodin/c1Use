@@ -1,26 +1,26 @@
 /* c1Use */
 !function(global, undefined) {
 
-	var CALLBACKS = 'pseudosymbol_&/%f983';
+    var CALLBACKS = 'pseudosymbol_&/%f983';
 
-	global.c1Use = function (prop , cb) {
+    global.c1Use = function (prop , cb) {
 
-		var scope = this || self;
+        var scope = this || self;
 
         if (prop in scope) { // loadet?
-        	cb && cb.call(scope, scope[prop]);
-        	return scope[prop];
+            cb && cb.call(scope, scope[prop]);
+            return scope[prop];
         }
 
-    	var callbacks = scope[CALLBACKS] || ( scope[CALLBACKS] = {} );
+        var callbacks = scope[CALLBACKS] || ( scope[CALLBACKS] = {} );
 
-    	if (callbacks[prop] && cb) { // is it loading? (and async)
+        if (callbacks[prop] && cb) { // is it loading? (and async)
 
-    	    callbacks[prop].push(cb);
+            callbacks[prop].push(cb);
 
-    	} else { // load!
+        } else { // load!
 
-    		callbacks[prop] = [cb];
+            callbacks[prop] = [cb];
 
             (cb ? loadScript : loadScriptSync)( scope.c1UseSrc + '/' +prop + '.js?c' , function() {
             	var fn,
@@ -34,49 +34,46 @@
     	return cb ? null : scope[prop];
     };
 
-    /* multiple and path
-     * extend c1Use so it can have an array as first arguments
+    /* extend c1Use:
+     * - Multiple properties: it can have an array as first arguments
+     * - Path: requested Property can be something like "jQuery.fn.velocity"
      * */
     c1Use = function (use) {
-    	var fn = function (props, cb) {
-    		var scope = this || self;
-    		
-    		if (!scope.c1UseSrc) { throw new Error("c1Use: the Object needs a c1UseSrc property!"); };
-    		
-        	if (typeof props === 'string') {
+        var fn = function (props, cb) {
+            var scope = this || self;
 
-        		/* parts ("jQuery.fn.velocity") */
-        		var parts = props.split(/\./);
-        		var prop = parts.pop();
-        		for (var i = 0, part; part = parts[i++];) {
-       				c1Use.able( scope, part );
-       				scope = scope[part];
-        		}
-    			return use.call(scope, prop, cb);
+            if (!scope.c1UseSrc) { throw new Error("c1Use: the Object needs a c1UseSrc property!"); };
 
-        		/* without parts */
-        		//return use.call(this,props, cb);
-        	}
-        	var returns = [];
-        	var num = props.length;
-    		for ( var i = 0, prop; prop = props[i++];) {
-    			c1Use.call(scope, prop, function(i) {
-    				var fn = function(res) {
-    					returns[i-1] = res;
-    					num--;
-    					if (num===0) {
-    						cb.apply(scope,returns);
-    					}
-    				};
-    				return fn;
-    			}(i));
-    		}
-    	};
-    	return fn;
+            if (typeof props === 'string') {
+                /* parts e.g. "jQuery.fn.velocity" */
+                var parts = props.split(/\./);
+                var prop = parts.pop();
+                for (var i = 0, part; part = parts[i++];) {
+                    c1Use.able( scope, part );
+                    scope = scope[part];
+                }
+                return use.call(scope, prop, cb);
+            }
+            var returns = [];
+            var num = props.length;
+            for ( var i = 0, prop; prop = props[i++];) {
+                c1Use.call(scope, prop, function(i) {
+                    var fn = function(res) {
+                        returns[i-1] = res;
+                        num--;
+                        if (num===0) {
+                            cb.apply(scope,returns);
+                        }
+                    };
+                    return fn;
+                }(i));
+            }
+        };
+        return fn;
     } (c1Use);
 
     var hasOwn = Object.prototype.hasOwnProperty;
-    
+
     /* make the object useable */
     c1Use.able = function ( obj, prop) {
         if (obj[prop] === undefined) {
@@ -96,7 +93,7 @@
             return;
         }
 
-        /* other libaries should check properties like so: if (prop in obj) { ... }; so the getter will not fire */
+        /* Other libaries should check properties this way: if (prop in obj) { ... }; so the getter will not fire */
         Object.defineProperty(obj, prop, {
     		configurable: true,
     		get: function() {
@@ -110,8 +107,8 @@
     	});
     };
     
-    /* browser! */
-	var d = document;
+    /* browser specific! */
+    var d = document;
     function loadScript(path, cb, eb) {
         var elem = d.createElement('script');
         elem.setAttribute('src',path);
@@ -130,8 +127,8 @@
             elem.setAttribute('data-c1-src',path);
             cb();
             //setTimeout(function() {elem.remove();}); // better performance ?
-    	} else {
-       	 	eb();
+        } else {
+            eb();
     	}
     }
     if (!global.c1UseSrc) {
