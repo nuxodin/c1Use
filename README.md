@@ -10,8 +10,10 @@
       | jQuery.js
       |
       | jQuery | 
-               | fn | 
-                    |  velocity.js
+      |        | fn | 
+      |             |  velocity.js
+      |                
+      | JSON.js // JSON-Polyfill                
 
 ### Asyncron use:
 ```javascript
