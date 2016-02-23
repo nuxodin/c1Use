@@ -53,7 +53,7 @@ window.c1Use('jQuery', function($) { // "jQuery" is automaticly usable width c1U
 })
 ```
 
-### Use multiple resources:
+### Multiple depencies:
 ```javascript
 window.c1Use(['jQuery', 'mytool'], function($, mytool) {
     // use $ and mytool
