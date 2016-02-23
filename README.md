@@ -18,7 +18,7 @@
 ### Asyncron use:
 ```javascript
 // load jQuery async:
-window.c1Use('jQuery', function($) {
+window.c1Use('jQuery', function($) { 
 
     $('#test').addClass('xy')
 
